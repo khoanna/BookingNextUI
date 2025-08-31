@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchForm from './SearchForm'
-import { assets } from '../assets'
+import { assets } from '../../assets'
 
 const Hero = () => {
     return (
