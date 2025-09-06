@@ -1,20 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { assets } from '../assets';
 
 const Navbar = () => {
+    const location = useLocation();
+    
     const navLinks = [
         { name: 'Products', path: '/' },
         { name: 'Contact', path: '/' },
         { name: 'About', path: '/' },
     ];
 
-
     const [isScrolled, setIsScrolled] = React.useState(false);
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     React.useEffect(() => {
         const handleScroll = () => {
+            if (location.pathname !== "/") {
+                setIsScrolled(true);
+                return;
+            };
             setIsScrolled(window.scrollY > 10);
         };
         window.addEventListener("scroll", handleScroll);
