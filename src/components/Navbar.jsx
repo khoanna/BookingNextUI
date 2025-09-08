@@ -1,20 +1,20 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { assets } from '../assets';
 
 const Navbar = () => {
     const location = useLocation();
-    
+
     const navLinks = [
         { name: 'Products', path: '/' },
         { name: 'Contact', path: '/' },
         { name: 'About', path: '/' },
     ];
 
-    const [isScrolled, setIsScrolled] = React.useState(false);
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const handleScroll = () => {
             if (location.pathname !== "/") {
                 setIsScrolled(true);

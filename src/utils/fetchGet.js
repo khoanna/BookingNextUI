@@ -1,13 +1,12 @@
 const apiUrl = import.meta.env.VITE_BASE_API;
 
-export default fetchPost = async ({ endpoint, body, credentials }) => {
+export default async function fetchGet({ endpoint, credentials }) {
     const respone = await fetch(`${apiUrl}${endpoint}`, {
-        method: 'POST',
+        method: 'GET',
         credentials: credentials ? 'include' : 'omit',
         headers: {
             'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(body)
+        }
     })
     return respone;
 }

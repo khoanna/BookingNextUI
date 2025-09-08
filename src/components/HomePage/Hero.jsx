@@ -1,4 +1,3 @@
-import React from 'react'
 import SearchForm from './SearchForm'
 import { assets } from '../../assets'
 

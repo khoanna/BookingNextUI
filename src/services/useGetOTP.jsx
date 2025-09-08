@@ -1,17 +1,14 @@
+import { useState } from "react";
+import fetchPost from "../utils/fetchPost";
 
 export const useGetOtp = () => {
     const [otpLoading, setOtpLoading] = useState(false);
 
     const getOtp = async (body) => {
         setOtpLoading(true);
-        const respone = await fetchPost('/otp/verifyEmail', body);
-        if (respone.ok) {
-            const data = await respone.json();
-            console.log(data);
-            
-        }
+        const respone = await fetchPost({ endpoint: '/api/otp/register', body });
         setOtpLoading(false);
-        return respone.status;
+        return respone;
     }
 
     return { otpLoading, getOtp };

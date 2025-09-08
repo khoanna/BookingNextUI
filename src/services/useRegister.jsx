@@ -1,16 +1,15 @@
+import { useState } from "react";
+import fetchPost from "../utils/fetchPost";
 
 export const useRegister = () => {
     const [registerLoading, setRegisterLoading] = useState(false);
 
     const register = async (body) => {
+
         setRegisterLoading(true);
-        const respone = await fetchPost('/users/register', body);
-        if (respone.ok) {
-            const data = await respone.json();
-            console.log(data);
-        }
+        const respone = await fetchPost({ endpoint: '/api/register', body });
         setRegisterLoading(false);
-        return respone.status;
+        return respone;
     }
 
     return { registerLoading, register };

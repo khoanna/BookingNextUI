@@ -93,7 +93,7 @@ const Rooms = () => {
                 <p className='text-[#6a7282e6] m-auto text-center text-sm max-w-lg'>Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experiences.</p>
             </div>
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {hotels.map((hotel) => <HotelCard id={hotel.id} isRecommended={hotel.isRecommended} img={hotel.img} stars={hotel.stars} name={hotel.name} location={hotel.location} rate={hotel.rate} price={hotel.price} />)}
+                {hotels.map((hotel, index) => <HotelCard key={index} id={hotel.id} isRecommended={hotel.isRecommended} img={hotel.img} stars={hotel.stars} name={hotel.name} location={hotel.location} rate={hotel.rate} price={hotel.price} />)}
             </div>
 
             <div className="relative flex items-center mt-12">

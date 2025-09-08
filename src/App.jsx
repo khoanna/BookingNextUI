@@ -12,7 +12,7 @@ const App = () => {
   const hideNavbar = !['/login'].includes(location.pathname);
 
   return (
-    <div>
+    <div className='min-h-screen'>
       {hideNavbar && <Navbar />}
       <Routes>
         <Route path='/' element={<Home />} />
