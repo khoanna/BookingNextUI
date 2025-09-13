@@ -1,16 +1,12 @@
 import { useState } from "react";
-import fetchPost from "../utils/fetchPost";
+import fetchGet from "@/utils/fetchGet";
 
 export const useGoogleLogin = () => {
     const [googleLoginLoading, setLoginLoading] = useState(false);
 
-    const googleLogin = async (body) => {
+    const googleLogin = async () => {
         setLoginLoading(true);
-        const respone = await fetchPost('/login/oauth2/code/google', body);
-        if (respone.ok) {
-            const data = await respone.json();
-            console.log(data);
-        }
+        const respone = await fetchGet({ endpoint: '/login/oauth2/code/google' });
         setLoginLoading(false);
         return respone.status;
     }

@@ -6,6 +6,7 @@ import NotFound from './pages/NotFound'
 import Hotel from './pages/Hotel'
 import FindHotel from './pages/FindHotel'
 import Footer from './components/Footer'
+import { AppProvider } from './context/AppContext'
 
 const App = () => {
   const location = useLocation();
@@ -13,15 +14,17 @@ const App = () => {
 
   return (
     <div className='min-h-screen'>
-      {hideNavbar && <Navbar />}
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/hotel' element={<FindHotel />} />
-        <Route path='/hotel/:id' element={<Hotel />} />
-        <Route path='/login' element={<Login />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
+      <AppProvider>
+        {hideNavbar && <Navbar />}
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/hotel' element={<FindHotel />} />
+          <Route path='/hotel/:id' element={<Hotel />} />
+          <Route path='/login' element={<Login />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </AppProvider>
     </div>
   )
 }

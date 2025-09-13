@@ -6,7 +6,7 @@ export const useLogin = () => {
 
     const login = async (body) => {
         setLoginLoading(true);
-        const respone = await fetchPost({ endpoint: '/api/authen/login', body });
+        const respone = await fetchPost({ endpoint: '/api/authen/login', body, credentials: true });
         setLoginLoading(false);
         return respone;
     }

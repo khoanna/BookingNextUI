@@ -1,6 +1,6 @@
-const GoogleLogin = () => {
+const GoogleLogin = ({ login }) => {
     return (
-        <button className="relative mt-5 flex items-center justify-between w-full min-w-min h-10 px-3 bg-white border border-[#747775] rounded-[20px] text-[#1f1f1f] text-sm tracking-[0.25px] font-roboto font-normal cursor-pointer overflow-hidden transition duration-200 hover:shadow-md active:[&>div.gsi-material-button-state]:bg-[#303030] active:[&>div.gsi-material-button-state]:opacity-[0.12] focus:[&>div.gsi-material-button-state]:bg-[#303030] focus:[&>div.gsi-material-button-state]:opacity-[0.12] disabled:bg-[#ffffff61] disabled:border-[#1f1f1f1f] disabled:cursor-default">
+        <button onClick={login} className="relative mt-5 flex items-center justify-between w-full min-w-min h-10 px-3 bg-white border border-[#747775] rounded-[20px] text-[#1f1f1f] text-sm tracking-[0.25px] font-roboto font-normal cursor-pointer overflow-hidden transition duration-200 hover:shadow-md active:[&>div.gsi-material-button-state]:bg-[#303030] active:[&>div.gsi-material-button-state]:opacity-[0.12] focus:[&>div.gsi-material-button-state]:bg-[#303030] focus:[&>div.gsi-material-button-state]:opacity-[0.12] disabled:bg-[#ffffff61] disabled:border-[#1f1f1f1f] disabled:cursor-default">
             <div className="flex items-center justify-center flex-row flex-nowrap h-full w-full relative">
                 <div className="h-5 w-5 min-w-[20px] mr-3">
                     <svg

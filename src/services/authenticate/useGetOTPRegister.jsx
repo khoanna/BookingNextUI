@@ -1,15 +1,15 @@
 import { useState } from "react";
-import fetchPost from "../utils/fetchPost";
+import fetchPost from "@/utils/fetchPost";
 
-export const useGetOtp = () => {
+export const useGetOtpRegister = () => {
     const [otpLoading, setOtpLoading] = useState(false);
 
-    const getOtp = async (body) => {
+    const getOtpRegister = async (body) => {
         setOtpLoading(true);
         const respone = await fetchPost({ endpoint: '/api/otp/register', body });
         setOtpLoading(false);
         return respone;
     }
 
-    return { otpLoading, getOtp };
+    return { otpLoading, getOtpRegister };
 }

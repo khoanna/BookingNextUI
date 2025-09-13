@@ -1,5 +1,5 @@
 import { useState } from "react";
-import fetchPost from "../utils/fetchPost";
+import fetchPost from "@/utils/fetchPost";
 
 export const useLogout = () => {
     const [logoutLoading, setLogoutLoading] = useState(false);
